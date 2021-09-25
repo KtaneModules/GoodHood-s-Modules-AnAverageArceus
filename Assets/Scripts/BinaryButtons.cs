@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using KModkit;
 using UnityEngine;
 
@@ -45,6 +42,7 @@ public class BinaryButtons : MonoBehaviour
                 if ((yourpresses[0] == correctpresses[0]) && (yourpresses[1] == correctpresses[1]) && (yourpresses[2] == correctpresses[2]) && (yourpresses[3] == correctpresses[3]) && (yourpresses[4] == correctpresses[4]))
                 {
                     BombModule.HandlePass();
+                    Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.CorrectChime, transform);
                     Debug.LogFormat("[Binary Buttons #{0}] You submitted {1}{2}{3}{4}{5}, and that's correct! Module solved!", moduleId, yourpresses[0], yourpresses[1], yourpresses[2], yourpresses[3], yourpresses[4]);
                     ModuleSolved = true;
                 }

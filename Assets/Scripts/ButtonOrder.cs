@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using KModkit;
+﻿using KModkit;
 using UnityEngine;
 
 public class ButtonOrder : MonoBehaviour
@@ -25,7 +21,6 @@ public class ButtonOrder : MonoBehaviour
 
         Buttons[0].OnInteract += delegate ()
         {
-            Buttons[0].AddInteractionPunch();
             Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, Buttons[0].transform);
             if (!ModuleSolved)
             {
@@ -35,6 +30,7 @@ public class ButtonOrder : MonoBehaviour
                     if ((correctpresses[0] == yourpresses[0]) && (yourpresses[1] == correctpresses[1]))
                     {
                         BombModule.HandlePass();
+                        Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.CorrectChime, transform);
                         ModuleSolved = true;
                         Debug.LogFormat("[Button Order #{0}] Buttons pressed correctly. Module solved!", moduleId);
                     }
@@ -54,7 +50,6 @@ public class ButtonOrder : MonoBehaviour
 
         Buttons[1].OnInteract += delegate ()
         {
-            Buttons[1].AddInteractionPunch();
             Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, Buttons[1].transform);
             if (!ModuleSolved)
             {
@@ -64,6 +59,7 @@ public class ButtonOrder : MonoBehaviour
                     if ((correctpresses[0] == yourpresses[0]) && (yourpresses[1] == correctpresses[1]))
                     {
                         BombModule.HandlePass();
+                        Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.CorrectChime, transform);
                         ModuleSolved = true;
                         Debug.LogFormat("[Button Order #{0}] Buttons pressed correctly. Module solved!", moduleId);
                     }

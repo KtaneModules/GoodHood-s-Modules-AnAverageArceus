@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 39491939df6106b47955a39b221cb9de
+guid: 38a74e05ada0ec84385b3d10eb50a327
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,14 +8,14 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: DSEG14 Classic
+  fontName: Seven Segment
   fontNames:
-  - DSEG14 Classic
+  - Seven Segment
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   userData: 
-  assetBundleName: 
+  assetBundleName: mod.bundle
   assetBundleVariant: 

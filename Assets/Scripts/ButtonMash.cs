@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
+﻿using System.Linq;
 using KModkit;
 using UnityEngine;
 
@@ -48,7 +44,7 @@ public class ButtonMash : MonoBehaviour
         Submit.OnInteract += delegate ()
         {
             Submit.AddInteractionPunch();
-            Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, Submit.transform);
+            Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.BigButtonPress, Submit.transform);
             if (Mashes == CorrectMashes)
             {
                 BombModule.HandlePass();
