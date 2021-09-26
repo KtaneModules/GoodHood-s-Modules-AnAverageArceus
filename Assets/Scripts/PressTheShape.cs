@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
+﻿using System.Linq;
 using KModkit;
 using UnityEngine;
 
@@ -25,12 +22,13 @@ public class PressTheShape : MonoBehaviour
         Shapes[0].OnInteract += delegate ()
         {
             Shapes[0].AddInteractionPunch();
-            Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, Shapes[0].transform);
+            Audio.PlaySoundAtTransform("beep", Shapes[0].transform);
             if (!ModuleSolved)
             {
                 if (CorrectShape == 0)
                 {
                     BombModule.HandlePass();
+                    Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.CorrectChime, transform);
                     ModuleSolved = true;
                     Debug.LogFormat("[Press The Shape #{0}] You pressed the triangle. Module solved.", ModuleId);
                 }
@@ -46,12 +44,13 @@ public class PressTheShape : MonoBehaviour
         Shapes[1].OnInteract += delegate ()
         {
             Shapes[1].AddInteractionPunch();
-            Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, Shapes[1].transform);
+            Audio.PlaySoundAtTransform("beep", Shapes[1].transform);
             if (!ModuleSolved)
             {
                 if (CorrectShape == 1)
                 {
                     BombModule.HandlePass();
+                    Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.CorrectChime, transform);
                     ModuleSolved = true;
                     Debug.LogFormat("[Press The Shape #{0}] You pressed the square. Module solved.", ModuleId);
                 }
@@ -67,12 +66,13 @@ public class PressTheShape : MonoBehaviour
         Shapes[2].OnInteract += delegate ()
         {
             Shapes[2].AddInteractionPunch();
-            Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, Shapes[2].transform);
+            Audio.PlaySoundAtTransform("beep", Shapes[2].transform);
             if (!ModuleSolved)
             {
                 if (CorrectShape == 2)
                 {
                     BombModule.HandlePass();
+                    Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.CorrectChime, transform);
                     ModuleSolved = true;
                     Debug.LogFormat("[Press The Shape #{0}] You pressed the circle. Module solved.", ModuleId);
                 }
